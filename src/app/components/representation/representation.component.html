@@ -1,0 +1,26 @@
+<div (click)="reloadData()" class="centralise">
+  <dx-chart
+    id="chart"
+    title="Representation"
+    [dataSource]="viewData"
+    [rotated]="true"
+  >
+    <dxo-size [height]="400" [width]="500">
+    </dxo-size>
+    <dxi-series
+      color="#5fc7f5"
+      type="bar"
+      argumentField="type"
+      valueField="countInPercent"
+    >
+      <dxo-label [visible]="true" backgroundColor="#c18e92" [customizeText]="customizeValueText"></dxo-label>
+    </dxi-series>
+    <dxo-argument-axis>
+      <dxo-label [customizeText]="customizeArgumentText"></dxo-label>
+    </dxo-argument-axis>
+    <dxi-value-axis>
+      <dxo-label [visible]="false"></dxo-label>
+    </dxi-value-axis>
+    <dxo-legend [visible]="false"></dxo-legend>
+  </dx-chart>
+</div>
